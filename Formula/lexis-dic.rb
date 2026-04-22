@@ -1,7 +1,7 @@
 class LexisDic < Formula
   desc "AI-powered English Dictionary for macOS"
   homepage "https://github.com/seabornlee/ai-dic-repos"
-  url "https://github.com/seabornlee/ai-dic-repos/releases/download/v1.0.0/AIDictionary-1.0.0.dmg"
+  url "https://github.com/seabornlee/ai-dic-repos/releases/download/v1.0.0/LexisDic-1.0.0.dmg"
   sha256 "0000000000000000000000000000000000000000000000000000000000000000"
   version "1.0.0"
   license "MIT"
@@ -14,7 +14,7 @@ class LexisDic < Formula
     system "hdiutil", "attach", url, "-mountpoint", temp_dir, "-nobrowse"
 
     # Copy app to Applications
-    system "cp", "-R", "#{temp_dir}/AIDictionary.app", "/Applications/AIDictionary.app"
+    system "cp", "-R", "#{temp_dir}/LexisDic.app", "/Applications/LexisDic.app"
 
     # Unmount DMG
     system "hdiutil", "detach", temp_dir, "-force"
@@ -24,6 +24,6 @@ class LexisDic < Formula
   end
 
   test do
-    assert_predicate File.exist?("/Applications/AIDictionary.app"), "App should be installed"
+    assert_predicate File.exist?("/Applications/LexisDic.app"), "App should be installed"
   end
 end
